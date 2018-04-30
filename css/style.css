@@ -1,0 +1,114 @@
+/* 定位法：position:absolute  如果子级div有定义宽和高的话就可以用这个方法。注意：margin-top,和margin-left的值均为高和宽值的一半 */
+.higher-up1{
+    position: relative;
+    
+}
+
+.underling1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    background: pink;
+    width: 200px;
+    height: 200px;
+}
+
+/* margin:auto法  这个也可以是定位法。用这个方法要求子级div必须设置宽的值，不然没有效果哦~margin:auto是水平垂直都居中，如果仅仅设置水平居中，可设置为margin:auto 0;同理，如果仅仅设置垂直居中，可设置为margin:0 auto. */
+.higher-up2{
+    margin-top: 100px;
+    position: relative;
+}
+
+.underling2{
+    position: absolute;/* 或fixed */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
+/* display:table-cell法  这个方法主要针对多行文字内容的垂直居中对齐。注意：text-align:center设置了文字的水平居中对齐，vertical-align:middle设置的是垂直居中对齐 */
+.higher-up3{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100px;
+    height: 200px;
+    background-color: blueviolet;
+}
+.underling3{
+    display: inline-block;
+    vertical-align: middle;
+    color: brown;
+}
+
+/* transform:translate(x,y)法 这个是css3中的新属性，如果子级元素没有设置宽和高值的话可以用这个方法来实现。这在我们做自适应页面的时候可以用到。 */
+higher-up4{
+    position: relative;
+    
+}
+.underling4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+/* before，after伪元素法 这个也是让子级元素垂直居中了。如果还想要水平居中的话可以配合其他几种方法配合使用来实现，比如给子级元素设置：margin:0 auto;这样就水平和垂直都居中了。 */
+.higher-up5{
+    position: fixed;
+    background-color: chartreuse;
+}
+.higher-up5::before{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.higher-up5::after{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.underling5{
+    width: 200px;
+    height: 200px;
+    background-color: darkgoldenrod;
+}
+
+/* Flex布局法  这个方法要充分考虑浏览器的兼容性。要垂直居中的元素也是无需设置宽和高的值，可以用在自适应页面中来实现水平垂直居中。*/
+.underling6{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    
+    /* 水平居中 */
+    
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    
+    /* 垂直居中 */
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    color: blue;
+    
+}
