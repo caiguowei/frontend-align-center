@@ -1,3 +1,21 @@
+/* 属性重置 */
+body,div,p,ul,ol,dl,dt,dd,li,form,input,table,th,td,img,h1,h2,h3,h4,h5,h6 { margin:0 ;padding:0; }
+body { background:#fff ; color:#000; font-size:12px; font-style:normal; font-family:"Microsoft Yahei"; }
+p{line-height:1.6}
+h1,h2,h3{line-height:2}
+em, b, i { font-style:normal;}
+img { border:none;}
+a { text-decoration:none; color:#000;}
+a:hover { text-decoration:underline; color:#cc0000;}
+li { list-style:none;}
+table { border-spacing:0; border-collapse:collapse;}
+
+/*清除浮动*/
+    .clearfix { *zoom: 1;} 
+    .clearfix:before, .clearfix:after { display: table; line-height: 0; content: "";}
+    .clearfix:after { clear: both;}
+
+
 /* 定位法：position:absolute  如果子级div有定义宽和高的话就可以用这个方法。注意：margin-top,和margin-left的值均为高和宽值的一半 */
 .higher-up1{
     position: relative;
@@ -63,10 +81,14 @@ higher-up4{
 
 /* before，after伪元素法 这个也是让子级元素垂直居中了。如果还想要水平居中的话可以配合其他几种方法配合使用来实现，比如给子级元素设置：margin:0 auto;这样就水平和垂直都居中了。 */
 .higher-up5{
+    
     position: fixed;
     background-color: chartreuse;
+    float: right;
+    margin-top: 50px;
 }
 .higher-up5::before{
+   
     content: '';
     display: inline-block;
     vertical-align: middle;
@@ -79,8 +101,8 @@ higher-up4{
     height: 100%;
 }
 .underling5{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px; 
     background-color: darkgoldenrod;
 }
 
@@ -112,3 +134,81 @@ higher-up4{
     color: blue;
     
 }
+/* the end */
+
+/* 圆，半圆 */
+.round{
+    height: 100px;
+    margin-top: 100px;
+    margin-left: 100px;
+    float: left;
+    padding-top: 50px;
+}
+
+.RightRound{
+   
+    width: 25px;
+    height: 50px;
+    float: left;
+    margin-left: 150px;
+    border-radius: 0 50px 50px 0;
+    background-color: brown;
+   
+}
+
+.LeftRound{
+    width: 25px;
+    height: 50px;
+    float: left;
+    margin-left: 150px;
+    border-radius: 50px 0 0 50px;
+    background-color: chartreuse;
+}
+
+.TopRound{
+     width: 50px;
+    height: 25px;
+    float: left;
+    margin-left: 150px;
+    border-radius: 50px 50px 0 0;
+    background-color: darkgreen;
+}
+
+.BottomRound{
+     width: 50px;
+    height: 25px;
+    float: left;
+    margin-left: 150px;
+    border-radius: 0 0 50px 50px;
+    background-color: deepskyblue;
+}
+
+.YRound{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 150px;
+    border-radius: 50%;
+    background-color: deeppink;
+}
+/* the end */
+
+/* 三角形 */
+.triangle{
+    float: right;
+    margin-right: 50px;
+    border: 50px solid green;
+    border-top-color: yellow;
+    border-bottom-color: #08c;
+    border-right-color: fuchsia;
+    border-left-color: hotpink;
+}
+.arrow{
+    float: right;
+    margin-right: 60px;
+    border: 50px solid orange;
+    width: 0;
+    height: 0;
+    border-color: lightslategrey transparent transparent transparent;
+}
+/* the end */
