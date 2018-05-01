@@ -1,28 +1,103 @@
 /* 属性重置 */
-body,div,p,ul,ol,dl,dt,dd,li,form,input,table,th,td,img,h1,h2,h3,h4,h5,h6 { margin:0 ;padding:0; }
-body { background:#fff ; color:#000; font-size:12px; font-style:normal; font-family:"Microsoft Yahei"; }
-p{line-height:1.6}
-h1,h2,h3{line-height:2}
-em, b, i { font-style:normal;}
-img { border:none;}
-a { text-decoration:none; color:#000;}
-a:hover { text-decoration:underline; color:#cc0000;}
-li { list-style:none;}
-table { border-spacing:0; border-collapse:collapse;}
+
+body,
+div,
+p,
+ul,
+ol,
+dl,
+dt,
+dd,
+li,
+form,
+input,
+table,
+th,
+td,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-family: "Microsoft Yahei";
+}
+
+p {
+    line-height: 1.6
+}
+
+h1,
+h2,
+h3 {
+    line-height: 2
+}
+
+em,
+b,
+i {
+    font-style: normal;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #cc0000;
+}
+
+li {
+    list-style: none;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
 
 /*清除浮动*/
-    .clearfix { *zoom: 1;} 
-    .clearfix:before, .clearfix:after { display: table; line-height: 0; content: "";}
-    .clearfix:after { clear: both;}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
 
 
 /* 定位法：position:absolute  如果子级div有定义宽和高的话就可以用这个方法。注意：margin-top,和margin-left的值均为高和宽值的一半 */
-.higher-up1{
+
+.higher-up1 {
     position: relative;
-    
+
 }
 
-.underling1{
+.underling1 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,13 +109,15 @@ table { border-spacing:0; border-collapse:collapse;}
 }
 
 /* margin:auto法  这个也可以是定位法。用这个方法要求子级div必须设置宽的值，不然没有效果哦~margin:auto是水平垂直都居中，如果仅仅设置水平居中，可设置为margin:auto 0;同理，如果仅仅设置垂直居中，可设置为margin:0 auto. */
-.higher-up2{
+
+.higher-up2 {
     margin-top: 100px;
     position: relative;
 }
 
-.underling2{
-    position: absolute;/* 或fixed */
+.underling2 {
+    position: absolute;
+    /* 或fixed */
     top: 0;
     bottom: 0;
     left: 0;
@@ -52,7 +129,8 @@ table { border-spacing:0; border-collapse:collapse;}
 }
 
 /* display:table-cell法  这个方法主要针对多行文字内容的垂直居中对齐。注意：text-align:center设置了文字的水平居中对齐，vertical-align:middle设置的是垂直居中对齐 */
-.higher-up3{
+
+.higher-up3 {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -60,70 +138,78 @@ table { border-spacing:0; border-collapse:collapse;}
     height: 200px;
     background-color: blueviolet;
 }
-.underling3{
+
+.underling3 {
     display: inline-block;
     vertical-align: middle;
     color: brown;
 }
 
 /* transform:translate(x,y)法 这个是css3中的新属性，如果子级元素没有设置宽和高值的话可以用这个方法来实现。这在我们做自适应页面的时候可以用到。 */
-higher-up4{
+
+.higher-up4 {
     position: relative;
-    
+    margin-bottom: 20px;
+
 }
-.underling4{
+
+.underling4 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    
+    transform: translate(-50%, -50%);
+
 }
 
 /* before，after伪元素法 这个也是让子级元素垂直居中了。如果还想要水平居中的话可以配合其他几种方法配合使用来实现，比如给子级元素设置：margin:0 auto;这样就水平和垂直都居中了。 */
-.higher-up5{
-    
+
+.higher-up5 {
+
     position: fixed;
     background-color: chartreuse;
     float: right;
     margin-top: 50px;
 }
-.higher-up5::before{
-   
+
+.higher-up5::before {
+
     content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%;
 }
-.higher-up5::after{
+
+.higher-up5::after {
     content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%;
 }
-.underling5{
+
+.underling5 {
     width: 100px;
-    height: 100px; 
+    height: 100px;
     background-color: darkgoldenrod;
 }
 
 /* Flex布局法  这个方法要充分考虑浏览器的兼容性。要垂直居中的元素也是无需设置宽和高的值，可以用在自适应页面中来实现水平垂直居中。*/
-.underling6{
+
+.underling6 {
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -moz-flex;
     display: -ms-flexbox;
-    
+
     /* 水平居中 */
-    
     -webkit-box-align: center;
     -moz-box-align: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center;
-    
+
     /* 垂直居中 */
     -webkit-box-pack: center;
     -moz-box-pack: center;
@@ -132,12 +218,14 @@ higher-up4{
     -moz-align-items: center;
     align-items: center;
     color: blue;
-    
+
 }
+
 /* the end */
 
 /* 圆，半圆 */
-.round{
+
+.round {
     height: 100px;
     margin-top: 100px;
     margin-left: 100px;
@@ -145,18 +233,18 @@ higher-up4{
     padding-top: 50px;
 }
 
-.RightRound{
-   
+.RightRound {
+
     width: 25px;
     height: 50px;
     float: left;
     margin-left: 150px;
     border-radius: 0 50px 50px 0;
     background-color: brown;
-   
+
 }
 
-.LeftRound{
+.LeftRound {
     width: 25px;
     height: 50px;
     float: left;
@@ -165,8 +253,8 @@ higher-up4{
     background-color: chartreuse;
 }
 
-.TopRound{
-     width: 50px;
+.TopRound {
+    width: 50px;
     height: 25px;
     float: left;
     margin-left: 150px;
@@ -174,8 +262,8 @@ higher-up4{
     background-color: darkgreen;
 }
 
-.BottomRound{
-     width: 50px;
+.BottomRound {
+    width: 50px;
     height: 25px;
     float: left;
     margin-left: 150px;
@@ -183,7 +271,7 @@ higher-up4{
     background-color: deepskyblue;
 }
 
-.YRound{
+.YRound {
     width: 50px;
     height: 50px;
     float: left;
@@ -191,10 +279,50 @@ higher-up4{
     border-radius: 50%;
     background-color: deeppink;
 }
+
+.heiger-up10 {
+    width: 90px;
+    height: 90px;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    background: yellow;
+    color: black;
+}
+
+.nine {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, .5);
+}
+
+.nine:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.nine .content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: red;
+    background: yellow;
+}
+
 /* the end */
 
 /* 三角形 */
-.triangle{
+
+.triangle {
     float: right;
     margin-right: 50px;
     border: 50px solid green;
@@ -203,7 +331,8 @@ higher-up4{
     border-right-color: fuchsia;
     border-left-color: hotpink;
 }
-.arrow{
+
+.arrow {
     float: right;
     margin-right: 60px;
     border: 50px solid orange;
@@ -211,4 +340,53 @@ higher-up4{
     height: 0;
     border-color: lightslategrey transparent transparent transparent;
 }
+
 /* the end */
+
+/* 垂直居中显示 */
+
+.higher-up7 {
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    margin-top: 200px;
+}
+
+.underling7 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+    background-color: cornsilk;
+}
+
+.higher-up8 {
+    margin-top: 50px;
+    background-color: darkblue;
+}
+
+.underling8 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 100px;
+    height: 100px;
+
+}
+
+.higher-up9 {
+    display: flex;
+    /*Flex布局*/
+    display: -webkit-flex;
+    /* Safari */
+    align-items: center;
+    /*指定垂直居中*/
+    width: 100px;
+    height: 100px;
+    background-color: darkgreen;
+}
