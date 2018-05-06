@@ -390,3 +390,35 @@ table {
     height: 100px;
     background-color: darkgreen;
 }
+
+/* 两个元素hover */
+.down-round a{
+  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 26px;
+  padding-top: 15px;
+}
+
+.protection .btn-icon{
+  display: block;
+  width: 9px;
+  height: 18px;
+  margin: 0 auto;
+  background: url(../images/sale-icon.png)no-repeat;
+}
+
+.down-round a:hover{
+  background-color: #459005;
+
+}
+
+.down-round a:hover i{
+
+  background: url(../images/saleicon-hover.png)no-repeat;
+}
+/* end */
