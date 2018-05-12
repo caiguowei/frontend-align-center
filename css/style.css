@@ -422,3 +422,29 @@ table {
   background: url(../images/saleicon-hover.png)no-repeat;
 }
 /* end */
+
+/* first child 的三种方法 */
+
+.hrLine{
+  margin-left: 30px;
+  width: 15px;
+  height: 14px;
+  border: 1px solid #000;
+  border-color: transparent transparent transparent #000;
+  float: left;
+  margin-top: 6px;
+}
+
+/* .menu-wrap>:first-child{
+  border-color: transparent;
+} */
+
+/* .menu-wrap div:first-child{
+  border-color: transparent;
+} */
+
+.menu .hrLine:first-child{
+  border-color: red;
+}
+
+/* end */
